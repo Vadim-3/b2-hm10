@@ -3,7 +3,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 from .views import RegisterView
 from .forms import LoginForm
 
-app_name = "users"
+app_name = "task_users"
 
 urlpatterns = [
     path("signup/", RegisterView.as_view(), name="signup"),

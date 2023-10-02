@@ -14,7 +14,7 @@ class RegisterView(View):
 
     def dispatch(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            return redirect(to='quotes:root')
+            return redirect(to='task_quote:root')
         return super().dispatch(request, *args, **kwargs)
 
     def get(self, request):
@@ -26,6 +26,6 @@ class RegisterView(View):
             form.save()
             username = form.cleaned_data['username']
             messages.success(request, f"{username}. Your account has been registered!")
-            return redirect(to="users:login")
+            return redirect(to="task_users:login")
 
         return render(request, self.template_name, {"form": form})

@@ -1,7 +1,7 @@
-{% extends 'quotes/base.html' %}
+{% extends 'task_quote/base.html' %}
 
 {% block content %}
-<form method="POST" action="{% url 'quotes:author' %}">
+<form method="POST" action="{% url 'task_quote:author' %}">
     {% csrf_token %}
     <div class="container">
         <h2>Add New Author</h2>

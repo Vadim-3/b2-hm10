@@ -14,7 +14,7 @@
             crossorigin="anonymous"
     />
     {% load static %}
-    <link rel="stylesheet" href="{% static 'quotes/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'task_quote/style.css' %}"/>
     <title>Quotes</title>
 </head>
 <body>
@@ -28,15 +28,17 @@
         {% if user.is_authenticated %}
         <div class="col-md-4">
             <p>
-                <a href="{% url 'quotes:upload_quote' %}" class="btn btn-primary">Upload quote</a>
-                <a href="{% url 'users:logout' %}" class="btn btn-primary">Logout</a>
+                <a href="{% url 'task_quote:tag' %}" class="btn btn-primary">Add tag</a>
+                <a href="{% url 'task_quote:author' %}" class="btn btn-primary">Add author</a>
+                <a href="{% url 'task_quote:upload_quote' %}" class="btn btn-primary">Upload quote</a>
+                <a href="{% url 'task_users:logout' %}" class="btn btn-primary">Logout</a>
             </p>
         </div>
         {% else %}
         <div class="col-md-4">
             <p>
-                <a href="{% url 'users:signup' %}" class="btn btn-primary">SignUp</a>
-                <a href="{% url 'users:login' %}" class="btn btn-primary">Login</a>
+                <a href="{% url 'task_users:signup' %}" class="btn btn-primary">SignUp</a>
+                <a href="{% url 'task_users:login' %}" class="btn btn-primary">Login</a>
             </p>
         </div>
         {% endif %}

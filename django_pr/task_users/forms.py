@@ -27,8 +27,8 @@ class LoginForm(AuthenticationForm):
     username = CharField(max_length=16, required=True,
                          widget=TextInput(attrs={"class": "form-control"}))
     password = CharField(max_length=16, min_length=6, required=True,
-                          widget=PasswordInput(attrs={"class": "form-control"}))
+                         widget=PasswordInput(attrs={"class": "form-control"}))
 
     class Meta:
         model = User
-        fields = ("username","password")
+        fields = ("username", "password")
